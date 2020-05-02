@@ -1,0 +1,102 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/index.css" rel="stylesheet" />
+</head>
+<body class="container">
+    <h1 class="h1">Welcome to book store application</h1>
+
+    <img src="~/images/monkey.jpg" class="logo" alt="image"/>
+
+    <input type="button" class="btn btn-danger" value="Click me" />
+
+    <h1>@DateTime.Now.ToString("dd-M-yy")</h1>
+    <h1>Sum = @(3 + 5)</h1>
+
+    <h1>Multiline - </h1>
+    @{
+        int a = 10;
+        int b = 20;
+        int c = a + b;
+    }
+
+    <h1>@c</h1>
+
+    <h2>My Email - faysal@gmail.com</h2>
+    <h2>Twitter - @@faysal</h2>
+
+    @{
+        int d = 11;
+    }
+
+
+    @if (d == 5)
+    {
+        d++;
+        <h1>Hello form if block value = @d</h1>
+    }
+    else if (d == 10)
+    {
+        <h1>Hello form other block</h1>
+    }
+    else
+    {
+        <h1> none of the above</h1>
+    }
+
+
+    @{
+        int e = 1;
+        int f = 0;
+    }
+
+    <h1>Ternary - @(e == 10 ? f = 111 : f = 222)</h1>
+    <h1>value of f = @f</h1>
+
+
+    @switch (e)
+    {
+        case 1:<h1>Iam 1</h1>
+            break;
+        case 2:<h1>iam 2</h1>
+            break;
+        case 3:<h1>iam 3</h1>
+            break;
+        default:<h1>im default</h1>
+            break;
+
+    }
+
+    @*@for (int i = 0; i < 10; i++)
+    {
+        <h1>welcome to my book store @i</h1>
+    }*@
+
+    @{ 
+        var list = new List<int>() { 1, 2, 3, 4, 5 };
+    }
+
+    @foreach (var item in list)
+    {
+        <h1>@item</h1>
+    }
+
+</body>
+<script src="~/lib/jquery/jquery.js"></script>
+
+</html>
+
+<script>
+    $(document).ready(function () {
+        alert("Page Loaded");
+    });
+</script>
